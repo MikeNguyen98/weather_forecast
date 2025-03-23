@@ -38,13 +38,14 @@ const WeatherDashboard: React.FC = () => {
   const [timeRange, setTimeRange] = useState<TimeRange>("1-week");
   const [selectedCountry, setSelectedCountry] =
     useState<OptionType>(defaultCountry);
+  const { data: locationData } = useLocationData();
+  console.log("🚀 ~ locationData:", locationData)
 
   const { data, isLoading, error, startDate, endDate } = useWeatherData(
     timeRange,
     unit,
     selectedCountry.data.latlng
   );
-  const { data: locationData } = useLocationData();
 
   // Transform location data into options for react-select
   const options = useMemo<OptionType[]>(() => {

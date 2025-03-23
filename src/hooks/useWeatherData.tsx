@@ -40,10 +40,11 @@ export const useWeatherData = (
     refetchInterval: 2 * 60 * 1000, // Refetch every 2 minutes
     refetchOnWindowFocus: false,
   });
+  console.log("🚀 ~ data:", data)
 
   // Process data for charting
   const processedData: ChartData[] = data
-    ? data.hourly.time.map((time: string, index: number) => ({
+    ? data?.hourly?.time?.map((time: string, index: number) => ({
         date: new Date(time),
         temperature:
           unit === "kelvin"

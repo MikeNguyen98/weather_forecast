@@ -1,5 +1,5 @@
 import React from "react";
-
+type TemperatureUnit = "celsius" | "kelvin";
 interface TemperatureUnitToggleProps {
   unit: TemperatureUnit;
   onUnitChange: (unit: TemperatureUnit) => void;

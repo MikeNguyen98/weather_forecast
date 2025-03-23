@@ -6,7 +6,7 @@ export const fetchWeatherData = async (
   startDate: string,
   endDate: string
 ): Promise<WeatherData> => {
-  const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m&start_date=${startDate}&end_date=${endDate}`;
+  const url = `${import.meta.env.VITE_OPENMETEO_API}/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m&start_date=${startDate}&end_date=${endDate}`;
 
   try {
     const response = await axios.get<WeatherData>(url);
@@ -18,8 +18,10 @@ export const fetchWeatherData = async (
 };
 
 export const fetchLocationData = async () => {
+  const url = `${import.meta.env.VITE_RESTCOUNTRY_API}/v3.1/all?fields=name&fields=latlng&fields=cca2&fields=flag`
+  
   try {
-    const response = await axios.get<Country[]>("https://restcountries.com/v3.1/all?fields=name&fields=latlng&fields=cca2&fields=flag");
+    const response = await axios.get<Country[]>(url);
     return response.data;
   } catch (error) {
     console.error("Error location data:", error);
