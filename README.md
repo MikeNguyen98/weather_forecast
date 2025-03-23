@@ -6,7 +6,7 @@ The **Weather Forecast App** is a web application that provides real-time weathe
 
 ## Features
 
-- Search weather by city name
+- Search weather by country name
 - Display current temperature, humidity, and weather conditions
 - User-friendly interface with dynamic updates
 - Responsive design for mobile and desktop users
@@ -42,15 +42,8 @@ Ensure you have **Node.js** installed (version 16+ recommended).
    ```
 4. Open the application in your browser:
    ```
-   http://localhost:3000
+   http://localhost:5173
    ```
-
-## Configuration
-
-- The app fetches weather data from an external API. Set your API key in an **.env** file:
-  ```env
-  VITE_WEATHER_API_KEY=your_api_key_here
-  ```
 
 ## Running Tests
 

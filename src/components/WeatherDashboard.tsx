@@ -39,7 +39,7 @@ const WeatherDashboard: React.FC = () => {
   const [selectedCountry, setSelectedCountry] =
     useState<OptionType>(defaultCountry);
   const { data: locationData } = useLocationData();
-  console.log("🚀 ~ locationData:", locationData)
+  console.log("🚀 ~ locationData:", locationData);
 
   const { data, isLoading, error, startDate, endDate } = useWeatherData(
     timeRange,
@@ -169,10 +169,11 @@ const WeatherDashboard: React.FC = () => {
               <h4 className="card-title">About This Dashboard</h4>
               <p className="card-text">
                 This dashboard displays temperature forecasts using data from
-                the Open Meteo API. You can toggle between 1-week and 1-month
-                views, and switch between Celsius and Kelvin temperature units.
-                The data automatically refreshes every 2 minutes to ensure you
-                have the most up-to-date information.
+                the Open Meteo API and country's location from restcountries.
+                You can toggle between 1-week and 1-month views, and switch
+                between Celsius and Kelvin temperature units. The data
+                automatically refreshes every 2 minutes to ensure you have the
+                most up-to-date information.
               </p>
             </Card.Body>
           </Card>
